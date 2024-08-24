@@ -1,0 +1,61 @@
+/* LeftRightSplitLayout.css */
+
+.layout-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  background-color: #007bff;
+  color: white;
+  padding: 10px;
+  text-align: center;
+}
+
+.content {
+  display: flex;
+  flex: 1;
+  transition: margin-left 0.3s ease; /* Smooth transition for collapsing */
+}
+
+.left-pane {
+  flex: 0 0 200px; /* Initial width of left pane */
+  background-color: #f0f0f0;
+  padding: 10px;
+  transition: width 0.3s ease; /* Smooth transition for width change */
+  overflow: hidden; /* Hide overflow when collapsed */
+}
+
+.right-pane {
+  flex: 1;
+  background-color: #ffffff;
+  padding: 10px;
+  transition: margin-left 0.3s ease; /* Smooth transition to accommodate collapsible pane */
+}
+
+/* Collapsed state of left pane */
+.left-pane.collapsed {
+  width: 10%; /* Width when collapsed */
+}
+
+/* Optionally style right pane when left pane is collapsed */
+.right-pane.expanded {
+  margin-left: 0;
+}
+
+.footer {
+  background-color: #007bff;
+  color: white;
+  padding: 10px;
+  text-align: center;
+}
+
+/* Reset default body margin and padding */
+body {
+  margin: 0;
+  padding: 0;
+}
