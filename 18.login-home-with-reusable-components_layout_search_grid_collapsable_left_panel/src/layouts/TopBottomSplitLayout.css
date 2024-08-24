@@ -1,0 +1,32 @@
+/* Container that holds the split sections */
+.split-screen-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* Full viewport height */
+    margin: 0;
+}
+
+/* Top section: 30% of the height */
+.top-section {
+    flex: 0 0 10%;
+    background-color: #ffffff; /* Light gray background */
+    display: flex;
+    justify-content: top;
+    align-items: top;
+    padding-top: 3%;
+
+}
+
+/* Bottom section: 70% of the height */
+.bottom-section {
+    flex: 1; /* Takes the remaining space, which is 70% */
+    background-color: #ffffff; /* White background */
+    display: flex;
+    justify-content: center;
+    align-items: top;
+    padding-top: 4%;
+}
+
+.separator {
+    border-top: 1px solid #ccc; /* Style of the separator line */
+  }

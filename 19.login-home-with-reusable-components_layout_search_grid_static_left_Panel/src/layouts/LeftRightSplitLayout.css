@@ -1,0 +1,61 @@
+/* LeftRightSplitLayout.css */
+
+.layout-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.header {
+  height: 60px;
+  background-color: #f5f5f5;
+}
+
+.content {
+  display: flex;
+  flex: 1;
+  transition: all 0.3s;
+}
+
+.left-pane {
+  display: flex;
+  flex-direction: column;
+  width: 200px; /* Default width */
+  transition: width 0.3s;
+}
+
+.left-pane.collapsed {
+  width: 60px; /* Collapsed width */
+}
+
+.right-pane {
+  flex: 1; /* Takes up remaining space */
+  transition: margin-left 0.3s;
+}
+
+.right-pane.expanded {
+  margin-left: 200px; /* Adjust based on the expanded width of the left pane */
+}
+
+.footer {
+  height: 40px;
+  background-color: #f5f5f5;
+}
+
+/* Optional styles for the Drawer component */
+.left-drawer {
+  width: 200px; /* Default width */
+  transition: width 0.3s;
+}
+
+.left-drawer.collapsed {
+  width: 60px; /* Collapsed width */
+}
+
+.logo-container.visible {
+  display: block;
+}
+
+.logo-container.hidden {
+  display: none;
+}

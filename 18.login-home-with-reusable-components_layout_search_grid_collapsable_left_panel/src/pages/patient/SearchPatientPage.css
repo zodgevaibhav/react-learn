@@ -1,0 +1,17 @@
+/* App.css */
+.form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Space between elements */
+  }
+  
+  .input-group {
+    display: flex;
+    flex-direction: row;
+    gap: 5px; /* Space between label and input */
+  }
+  .button-container {
+    display: flex;
+    margin-top: 10px;
+  }
+    

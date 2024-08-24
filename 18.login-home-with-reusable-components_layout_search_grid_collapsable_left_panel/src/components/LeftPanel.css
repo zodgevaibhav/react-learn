@@ -1,0 +1,54 @@
+/* LeftPanel.css */
+
+/* Styles for the menu button */
+.menu-button {
+    margin-bottom: 16px;
+  }
+  
+  /* Styles for the drawer */
+  .left-drawer {
+    transition: width 0.3s;
+  }
+  
+  .left-drawer.open {
+    width: 200px;
+  }
+  
+  .left-drawer.closed {
+    width: 60px;
+  }
+  
+  /* Styles for the logo container */
+  .logo-container {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    transition: height 0.3s;
+  }
+  
+  .logo-container.hidden {
+    padding: 0;
+  }
+  
+  .logo-image {
+    width: 100%;
+    height: auto;
+  }
+  
+  /* Styles for the drawer header */
+  .drawer-header {
+    display: flex;
+    align-items: center;
+    padding: 0 8px;
+    justify-content: flex-end;
+  }
+  
+  /* Styles for the list items */
+  .list-item {
+    padding-left: 20px;
+  }
+  
+  .list-item-icon {
+    margin-right: 10px;
+  }
+  
