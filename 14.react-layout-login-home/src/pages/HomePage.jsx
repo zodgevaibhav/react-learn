@@ -1,4 +1,5 @@
 import { HomePageWithSideNav } from "../components/HomePageWithSideNav";
+import PatientListGrid from "./PatientListGrid";
 
 export function HomePage() {
 
@@ -12,7 +13,7 @@ function RightPanel(){
 
   return (
     <>
-      <HomePageWithSideNav left={LeftPanel} right={RightPanel} />
+      <HomePageWithSideNav left={LeftPanel} right={PatientListGrid} />
     </>
   );
 }

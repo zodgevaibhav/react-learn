@@ -1,5 +1,5 @@
 const BASE_URLS = {
-    DIRECTORY_BASE: 'https://api-gateway-2w4ltyugkq-uc.a.run.app',
+    DIRECTORY_BASE: 'http://localhost:8080',
     PATIENT_BASE: 'http://localhost:8080',
     CASE_BASE: 'http://localhost:8080',
     APPOINTMENT_BASE: 'http://localhost:8080',
