@@ -1,54 +1,38 @@
-/* LeftPanel.css */
 
-/* Styles for the menu button */
-.menu-button {
-    margin-bottom: 16px;
-  }
-  
-  /* Styles for the drawer */
+
+.logo-container {
+  display: flex;
+  justify-content: center;
+  padding: 5%;
+  transition: height 0.3s;
+}
+
+.logo-image {
+  width: 100%;
+  height: auto;
+}
+
+.list-item {
+  padding-left: 1%;
+}
+
+.list-item-icon {
+  margin-right: 5%;
+}
+
+/* Adjustments for smaller screens */
+@media (max-width: 768px) {
   .left-drawer {
-    transition: width 0.3s;
+    width: 10%; /* Adjust for smaller screens */
   }
   
-  .left-drawer.open {
-    width: 200px;
+  .left-drawer.collapsed {
+    width: 5%; /* Adjust for smaller screens */
   }
-  
-  .left-drawer.closed {
-    width: 40px;
+}
+
+@media (max-width: 480px) {
+  .left-drawer {
+    display: none; /* Hide the drawer on very small screens */
   }
-  
-  /* Styles for the logo container */
-  .logo-container {
-    display: flex;
-    justify-content: center;
-    padding: 10px;
-    transition: height 0.3s;
-  }
-  
-  .logo-container.hidden {
-    padding: 0;
-  }
-  
-  .logo-image {
-    width: 100%;
-    height: auto;
-  }
-  
-  /* Styles for the drawer header */
-  .drawer-header {
-    display: flex;
-    align-items: center;
-    padding: 0 8px;
-    justify-content: flex-end;
-  }
-  
-  /* Styles for the list items */
-  .list-item {
-    padding-left: 20px;
-  }
-  
-  .list-item-icon {
-    margin-right: 10px;
-  }
-  
+}

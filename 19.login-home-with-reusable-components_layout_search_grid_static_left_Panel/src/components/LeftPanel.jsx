@@ -1,22 +1,22 @@
+/* eslint-disable react/prop-types */
 import React from "react";
-import { Drawer, List, ListItem, Divider, ListItemText, IconButton } from "@mui/material";
+import { Drawer, List, ListItem, Divider, ListItemText } from "@mui/material";
 import { Link } from "react-router-dom";
-import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
-import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import './LeftPanel.css';
 
-const LeftPanel = ({ items, logoSrc, isCollapsed, onClose }) => {
+const LeftPanel = ({ items, logoSrc, isCollapsed}) => {
   return (
     <Drawer
       variant="persistent"
       anchor="left"
       open={!isCollapsed}
-      className={`left-drawer ${isCollapsed ? 'collapsed' : 'expanded'}`}
+      className={`left-drawer`}
     >
-      <div className={`logo-container ${!isCollapsed ? 'visible' : 'hidden'}`}>
+      <div className={`logo-container`}>
         {!isCollapsed && <img src={logoSrc} alt="Logo" className="logo-image" />}
       </div>
       <div className="drawer-header">
+
       </div>
       <Divider />
       <List>

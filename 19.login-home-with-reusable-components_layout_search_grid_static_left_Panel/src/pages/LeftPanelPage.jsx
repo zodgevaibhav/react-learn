@@ -1,4 +1,3 @@
-import React from "react";
 import LeftPanel from "../components/LeftPanel";
 import logoSrc from "../assets/appLogo.png";
 import HomeIcon from "@mui/icons-material/Home";
@@ -11,13 +10,12 @@ const items = [
   { name: "Contact", route: "/contact", icon: ContactMailIcon },
 ];
 
-const LeftPanelPage = ({ isCollapsed, onToggle }) => {
+const LeftPanelPage = () => {
   return (
     <LeftPanel
       items={items}
       logoSrc={logoSrc}
-      isCollapsed={isCollapsed}
-      onClose={onToggle}
+      isCollapsed={false}
     />
   );
 };

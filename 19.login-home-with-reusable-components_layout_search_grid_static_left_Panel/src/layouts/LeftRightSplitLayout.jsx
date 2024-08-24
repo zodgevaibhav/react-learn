@@ -1,24 +1,21 @@
-import React, { useState, memo } from "react";
+/* eslint-disable react/prop-types */
 import "./LeftRightSplitLayout.css";
 
 const LeftRightSplitLayout = ({ left: Left, right: Right }) => {
-  const [isCollapsed, setIsCollapsed] = useState(false);
 
   return (
     <div className="layout-container">
       <header className="header">Header</header>
       <div
         className="content"
-//        onMouseOver={() => setIsCollapsed(false)}
-//        onMouseOut={() => setIsCollapsed(true)}
       >
         <div
-          className={`left-pane${isCollapsed ? " collapsed" : ""}`}
+          className={`left-pane`}
         >
-          <Left isCollapsed={isCollapsed} />
+          <Left/>
         </div>
         <div
-          className={`right-pane${isCollapsed ? " expanded" : ""}`}
+          className={`right-pane`}
         >
           <Right />
         </div>
@@ -28,4 +25,4 @@ const LeftRightSplitLayout = ({ left: Left, right: Right }) => {
   );
 };
 
-export default memo(LeftRightSplitLayout);
+export default LeftRightSplitLayout;
