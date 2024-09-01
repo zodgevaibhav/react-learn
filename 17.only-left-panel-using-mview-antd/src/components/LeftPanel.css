@@ -1,54 +1,58 @@
 /* LeftPanel.css */
 
-/* Styles for the menu button */
-.menu-button {
-    margin-bottom: 16px;
-  }
-  
-  /* Styles for the drawer */
-  .left-drawer {
-    transition: width 0.3s;
-  }
-  
-  .left-drawer.open {
-    width: 200px;
-  }
-  
-  .left-drawer.closed {
-    width: 60px;
-  }
-  
-  /* Styles for the logo container */
-  .logo-container {
-    display: flex;
-    justify-content: center;
-    padding: 10px;
-    transition: height 0.3s;
-  }
-  
-  .logo-container.hidden {
-    padding: 0;
-  }
-  
-  .logo-image {
-    width: 100%;
-    height: auto;
-  }
-  
-  /* Styles for the drawer header */
-  .drawer-header {
-    display: flex;
-    align-items: center;
-    padding: 0 8px;
-    justify-content: flex-end;
-  }
-  
-  /* Styles for the list items */
-  .list-item {
-    padding-left: 20px;
-  }
-  
-  .list-item-icon {
-    margin-right: 10px;
-  }
-  
+.drawer {
+  transition: width 0.3s;
+  overflow-x: hidden;
+  white-space: nowrap;
+}
+
+.drawer-open {
+  width: 240px;
+}
+
+.drawer-closed {
+  width: 60px;
+}
+
+.drawer-paper {
+  box-sizing: border-box;
+}
+
+.drawer-content {
+  display: flex;
+  align-content: center;
+}
+
+.small-logo {
+  height: 20px;
+  margin-left: 45%;
+  margin-top: 10%;
+}
+
+.logo {
+  height: 40px;
+  margin-right: auto;
+}
+
+.icon-button {
+  align-content: right;
+}
+
+.list-item {
+  min-height: 48px;
+}
+
+.list-item-open {
+  justify-content: initial;
+  padding-left: 16px;
+}
+
+.list-item-icon {
+  min-width: 0;
+  margin-right: auto;
+  justify-content: center;
+}
+
+.list-item-text {
+  display: block;
+}

@@ -1,24 +1,22 @@
-import HomeIcon from "@mui/icons-material/Home";
-import InfoIcon from "@mui/icons-material/Info";
-import ContactMailIcon from "@mui/icons-material/ContactMail";
-import { LeftPanel } from "./components/LeftPanel";
+import  LeftPanel  from "./components/LeftPanel";
 import logoSrc from "./assets/appLogo.png"
+import logoSmallSrc from "./assets/appLogo_small.png"
 import {LeftPanelAntD} from "./components/LeftPanelAntD";
 
-import { HomeOutlined, InfoCircleOutlined, MailOutlined } from "@ant-design/icons";
-
+import { Home as HomeIcon, Info as InfoIcon, Settings as SettingsIcon } from '@mui/icons-material';
 
 const items = [
-  { name: "Home", route: "/home", icon: HomeOutlined },
-  { name: "About", route: "/about", icon: InfoCircleOutlined },
-  { name: "Contact", route: "/contact", icon: MailOutlined },
+  { icon: <HomeIcon />, route: "/home", text: 'Home' },
+  { icon: <InfoIcon />, route: "/about",text: 'About' },
+  { icon: <SettingsIcon />, route: "/contact",text: 'Settings' },
 ];
+
 
 function App() {
   return (
     <>
       {/* <LeftPanel items={items} logoSrc={logoSrc}/> */}
-      <LeftPanel items={items} logoSrc={logoSrc}/> 
+      <LeftPanel items={items} logoSrc={logoSrc} logoSrcSmall={logoSmallSrc}/> 
     </>
   );
 }

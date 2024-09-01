@@ -1,51 +1,72 @@
-import React, { useState } from "react";
-import { Drawer, List, ListItem, Divider, IconButton, ListItemText } from "@mui/material";
+import React, { useState } from 'react';
 import { Link } from "react-router-dom";
-import MenuIcon from "@mui/icons-material/Menu";
-import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
-import ChevronRightIcon from "@mui/icons-material/ChevronRight";
+import {
+  Drawer,
+  List,
+  ListItem,
+  ListItemIcon,
+  ListItemText,
+  IconButton,
+  Divider,
+  Box,
+  CssBaseline,
+} from '@mui/material';
+import {
+  ChevronLeft as ChevronLeftIcon,
+  ChevronRight as ChevronRightIcon,
+} from '@mui/icons-material';
 import './LeftPanel.css'; // Import the CSS file
 
-export function LeftPanel({ items, logoSrc }) {
-  const [open, setOpen] = useState(false);
+const LeftPanel = ({ items, logoSrc , logoSrcSmall}) => {
+  const [open, setOpen] = useState(true);
 
-  const handleDrawerOpen = () => {
-    setOpen(true);
-  };
-
-  const handleDrawerClose = () => {
-    setOpen(false);
+  const handleToggle = () => {
+    setOpen(!open);
   };
 
   return (
-    <>
-      <IconButton onClick={handleDrawerOpen} className="menu-button">
-        <MenuIcon />
-      </IconButton>
+    <Box sx={{ display: 'flex' }}>
+      <CssBaseline />
+      {/* Drawer component for the sidebar */}
       <Drawer
-        variant="persistent"
+        variant="permanent"
         anchor="left"
         open={open}
-        className={`left-drawer ${open ? 'open' : 'closed'}`}
+        className={`drawer ${open ? 'drawer-open' : 'drawer-closed'}`}
+        classes={{ paper: 'drawer-paper' }}
       >
-        <div className={`logo-container ${open ? 'visible' : 'hidden'}`}>
-          {open && <img src={logoSrc} alt="Logo" className="logo-image" />}
-        </div>
-        <div className="drawer-header">
-          <IconButton onClick={handleDrawerClose}>
+        <Box className="drawer-content">
+          {/* Logo */}
+          {open ? logoSrc && (
+            <img src={logoSrc} alt="Logo" className="logo" />
+          ):logoSrcSmall && (
+            <img src={logoSrcSmall} alt="Logo"  className="small-logo"/>
+          )}
+          {/* Icon button to collapse/expand the drawer */}
+          <IconButton onClick={handleToggle} className="icon-button">
             {open ? <ChevronLeftIcon /> : <ChevronRightIcon />}
           </IconButton>
-        </div>
+        </Box>
         <Divider />
+        {/* List of items inside the drawer */}
         <List>
-          {items.map(({ name, route, icon: Icon }, index) => (
-            <ListItem button key={index} component={Link} to={route} className="list-item">
-              <Icon className="list-item-icon" />
-              <ListItemText primary={name} />
+          {items.map((item, index) => (
+            <ListItem
+              button
+              key={index}
+              component={Link} to={item.route}
+              className={`list-item ${open ? 'list-item-open' : ''}`}
+            >
+              <ListItemIcon className="list-item-icon">
+                {item.icon}
+              </ListItemIcon>
+              {open && <ListItemText primary={item.text} className="list-item-text" />}
             </ListItem>
           ))}
         </List>
       </Drawer>
-    </>
+    </Box>
   );
-}
+};
+
+export default LeftPanel;
