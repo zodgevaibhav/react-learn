@@ -1,0 +1,33 @@
+/* Reset the defaults */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header{
+    background-image: linear-gradient( to right bottom, #bb65d5b8, #448be9bf);
+    align-content: center;
+    height: 5%;
+}
+
+ul {
+    list-style: none;
+    display: flex;  /* Flexbox for horizontal alignment */
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+/* Style links */
+ul li a {
+    text-decoration: none; /* Remove underline */
+    color: white;
+    font-size: 1em;
+    font-weight: bold;
+    padding: 0.5em 1em; /* Padding for links */
+    transition: color 0.3s;
+}
+
+ul li a:hover {
+    color: yellow; /* Hover effect */
+}
